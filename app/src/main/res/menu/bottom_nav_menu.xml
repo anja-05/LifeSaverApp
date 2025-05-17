@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_lernen"
+        android:icon="@drawable/icon_lektion_selektor"
+        android:title="Lektion" />
+
+    <item
+        android:id="@+id/nav_uebung"
+        android:icon="@drawable/icon_uebung_selektor"
+        android:title="Übung" />
+
+    <item
+        android:id="@+id/nav_profil"
+        android:icon="@drawable/icon_profil_selektor"
+        android:title="Profil" />
+</menu>
