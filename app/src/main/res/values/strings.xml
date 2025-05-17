@@ -1,6 +1,3 @@
 <resources>
     <string name="app_name">LifeSaverApp</string>
-    <string name="nav_lernen">Lektion</string>
-    <string name="nav_uebung">Übung</string>
-    <string name="nav_profil">Profil</string>
 </resources>

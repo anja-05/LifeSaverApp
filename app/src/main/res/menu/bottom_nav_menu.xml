@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/nav_lernen"
-        android:icon="@drawable/icon_lektion_selektor"
-        android:title="Lektion" />
 
-    <item
-        android:id="@+id/nav_uebung"
-        android:icon="@drawable/icon_uebung_selektor"
-        android:title="Übung" />
-
-    <item
-        android:id="@+id/nav_profil"
-        android:icon="@drawable/icon_profil_selektor"
-        android:title="Profil" />
+    <item android:title="Lektion"
+        android:icon="@drawable/baseline_auto_stories_24"
+        android:id="@+id/lektion"/>
+    <item android:title="Übung"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:id="@+id/uebung"/>
+    <item android:title="Profil"
+        android:icon="@drawable/baseline_health_and_safety_24"
+        android:id="@+id/profil"/>
 </menu>

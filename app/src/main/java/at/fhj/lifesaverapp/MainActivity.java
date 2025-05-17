@@ -2,42 +2,45 @@ package at.fhj.lifesaverapp;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import at.fhj.lifesaverapp.R;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import at.fhj.lifesaverapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
+
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        replaceFragment(new LernenFragment());
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        bottomNav.setOnItemSelectedListener(item -> {
-            Fragment selectedFragment;
-            switch (item.getItemId()) {
-                case R.id.:
-                    selectedFragment = new UebungFragment();
+        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+
+            switch (item.getItemId()){
+                case R.id.lektion:
+                    replaceFragment(new LernenFragment());
                     break;
-                case R.id.nav_profil:
-                    selectedFragment = new ProfilFragment();
+                case R.id.uebung:
+                    replaceFragment(new UebungFragment());
                     break;
-                case R.id.nav_lernen:
-                default:
-                    selectedFragment = new LernenFragment();
+                case R.id.profil:
+                    replaceFragment(new ProfilFragment());
                     break;
             }
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, selectedFragment)
-                    .commit();
             return true;
         });
 
-        bottomNav.setSelectedItemId(R.id.nav_lernen);
-
+    }
+    private void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.commit();
     }
 }
